@@ -69,18 +69,13 @@ namespace LabviewDXFViewer
             };
 
 
-            //write savedata to a json file 
-            var jsonS = JsonConvert.SerializeObject(saveData);
-            File.WriteAllText(@"D:\Uploaded\AutomatedProbing\" + waferName + ".json", jsonS);
+            var resp = (WebHost + "WaferPlanLoad").WithHeader("Authorization", Form1.pass).WithHeader("x-user", "probe").PostMultipartAsync(mp => mp
+                    .AddString("title", waferName)
+                    .AddFile("file", filename)
+                 ).Result;
 
 
-            //var resp = (WebHost + "WaferPlanLoad").WithHeader("Authorization", Form1.pass).WithHeader("x-user", "probe").PostMultipartAsync(mp => mp
-            //        .AddString("title", waferName)
-            //        .AddFile("file", filename)
-            //     ).Result;
-
-
-            //var result = (WebHost + "WaferTestSiteLoad?blob=" + Path.GetFileName(filename)).WithHeader("Authorization", Form1.pass).WithHeader("x-user", "probe").PostJsonAsync(saveData).Result;
+            var result = (WebHost + "WaferTestSiteLoad?blob=" + Path.GetFileName(filename)).WithHeader("Authorization", Form1.pass).WithHeader("x-user", "probe").PostJsonAsync(saveData).Result;
 
         }
 
@@ -362,7 +357,7 @@ namespace LabviewDXFViewer
                         dataGridView1.Rows[i].Cells[3].Value = ToEngineeringNotation(conductance) + conductUnit;
                         dataGridView1.Rows[i].Cells[4].Value = ToEngineeringNotation(capacitance) + capUnit;
                         dataGridView1.Rows[i].Cells[5].Value = ToEngineeringNotation(oxide) + oxideUnit;
-                        dataGridView1.Rows[i].Cells[6].Value = extraInfo + ":" + ToEngineeringNotation(extraValue);
+                        dataGridView1.Rows[i].Cells[6].Value = extraInfo+ ":"+ ToEngineeringNotation(extraValue) ;
                         dataGridView1.Rows[i].Selected = true;
                     }
                 }

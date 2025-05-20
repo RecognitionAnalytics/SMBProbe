@@ -77,20 +77,22 @@
             // 
             // microsites1
             // 
+            this.microsites1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.microsites1.Canvas = null;
-            this.microsites1.Location = new System.Drawing.Point(1248, 32);
+            this.microsites1.Location = new System.Drawing.Point(721, 32);
             this.microsites1.Name = "microsites1";
-            this.microsites1.Size = new System.Drawing.Size(197, 445);
+            this.microsites1.Size = new System.Drawing.Size(724, 386);
             this.microsites1.TabIndex = 2;
             // 
             // dxfCanvas1
             // 
-            this.dxfCanvas1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dxfCanvas1.Location = new System.Drawing.Point(1, 32);
+            this.dxfCanvas1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dxfCanvas1.Location = new System.Drawing.Point(0, 0);
             this.dxfCanvas1.Name = "dxfCanvas1";
-            this.dxfCanvas1.Size = new System.Drawing.Size(1220, 445);
+            this.dxfCanvas1.Size = new System.Drawing.Size(715, 477);
             this.dxfCanvas1.TabIndex = 1;
             // 
             // button4

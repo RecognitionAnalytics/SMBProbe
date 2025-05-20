@@ -1,5 +1,4 @@
-﻿using Accord.Imaging;
-using DXFImporter;
+﻿using DXFImporter;
 using netDxf;
 using netDxf.Entities;
 using System;
@@ -255,9 +254,8 @@ namespace LabviewDXFViewer
 
 
             DXFPolyline biggest = null;
-            DXFPolyline closest = null;
             int maxWidth = 0;
-            double minDist = double.MaxValue;
+
 
             foreach (var obj in Shapes)
             {
@@ -274,17 +272,8 @@ namespace LabviewDXFViewer
                         hitTest |= true;
                         // break;
                     }
-                    var center = temp.Bounds.Center();
-                    var dist =Math.Sqrt( (center.X- picPoint.X)^2 + (center.Y-picPoint.Y)^2);
-                    if (dist < minDist)
-                    {
-                        closest = temp;
-                        minDist = dist;
-                    }
                 }
             }
-            if (biggest == null)
-                biggest = closest;
             biggest.Highlight(picPoint);
 
             return hitTest;

@@ -57,10 +57,10 @@ namespace LabviewDXFViewer
         {
             try
             {
-                var dxf = File.ReadAllText(@"D:\Uploaded\LabviewDXFViewer\MIM_Chip_HD_NoArrays.dxf");
-                var json = File.ReadAllText(@"D:\Uploaded\LabviewDXFViewer\HighDensity.json");
+                var dxf = File.ReadAllText(@"E:\WaferPlans\DXFFiles\FGmask-N1.dxf");
+                var json = File.ReadAllText(@"E:\WaferPlans\FGmask-N1.json");
 
-                microsites1.LoadListSitesLV("HighDensity", dxf, json);// comboBox1.Text);
+                microsites1.LoadListSitesLV("FGmask-N1", dxf, json);// comboBox1.Text);
 
                 microsites1.GetSecondCorner();
             }
